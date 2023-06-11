@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api-server:
+    restart: always
+    build:
+      target: production
+    expose:
+      - "3000"
+    ports:
+      - "3001:3000"
+    entrypoint: [ "pm2-runtime", "pm2-config.yml" ]

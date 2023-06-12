@@ -3,11 +3,13 @@ name: mongodb_api
 services:
   #API service 
   api:
+    container_name: api
     build:
       context: .
       dockerfile: Dockerfile
       target: base
-    container_name: api
+    env_file:
+      - .env
     volumes:
       - ./src:/usr/src/app/src
     ports:
@@ -22,7 +24,8 @@ services:
     image: mongo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER}
-      - MONGO_INITDB_ROOT_PASSWORD={MONGODB_PASSWORD}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD}
+      - MONGO_INITDB_DATABASE=content
     restart: always
     ports:
       - "27018:27017"

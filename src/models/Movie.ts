@@ -1,4 +1,3 @@
-import BaseModel from "./BaseModel";
 import { Schema, model } from "mongoose";
 
 const movieSchema = new Schema({
@@ -11,7 +10,5 @@ const movieSchema = new Schema({
     favs: Number,
   },
 });
-class Movie extends BaseModel {}
-movieSchema.loadClass(Movie);
 
 export default model("Movie", movieSchema);

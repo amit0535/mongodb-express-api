@@ -5,9 +5,10 @@ export default class MovieRouteHandler {
     return await createMovie(req.query);
   }
   static async getAll(req: Request, res: Response) {
-    const { operator, ...params } = req.query;
+    res.json({ movies: [] });
   }
   static async getOne(req: Request, res: Response) {
     const { operator, ...params } = req.query;
   }
 }
+console.log({ atClass: MovieRouteHandler });

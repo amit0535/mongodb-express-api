@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { id } from "./plugins";
+import { echo, id } from "./plugins";
 const { MONGODB_USER, MONGODB_PASSWORD, MONGODB_HOST } = process.env;
 mongoose
   .connect(
@@ -10,3 +10,4 @@ mongoose
   )
   .then(() => console.log("Connected to mongodb"));
 mongoose.plugin(id);
+mongoose.plugin(echo);

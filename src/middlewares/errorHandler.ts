@@ -6,5 +6,5 @@ export default function errorHandler(
   res: Response,
   next: NextFunction
 ): void {
-  res.json({ success: false, message: error.message });
+  res.error({ message: error.message });
 }

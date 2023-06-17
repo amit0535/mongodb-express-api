@@ -4,5 +4,5 @@ export default function routeNotFoundHandler(
   req: Request,
   res: Response
 ): void {
-  res.status(404).json({ success: false, message: "Route not found" });
+  res.error({ message: "Route not found" }, 404);
 }

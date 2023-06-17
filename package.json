@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "nodemon -r tsconfig-paths/register src/server.ts",
+    "dev": "nodemon --transpileOnly -r tsconfig-paths/register  src/server.ts",
     "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build"
   },
   "author": "",

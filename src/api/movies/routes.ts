@@ -6,8 +6,5 @@ export const routes = Router();
 routes.get("/", MovieRouteHandler.getAll);
 routes.post("/", MovieRouteHandler.create);
 routes.get("/:id", MovieRouteHandler.getOne);
-
-routes.get("/cities", (req: Request, res: Response) => {
-  res.send("What's up doc ?!");
-});
+routes.delete("/:id", MovieRouteHandler.delete);
 routes.use(errorHandler);

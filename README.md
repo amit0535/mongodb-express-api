@@ -1,4 +1,4 @@
-#Not for small projects
+# Not for small projects
 
 You can follow MVC (Model View Controller) for small project but this is best suited for larger projects
 

@@ -7,4 +7,5 @@ routes.get("/", MovieRouteHandler.getAll);
 routes.post("/", MovieRouteHandler.create);
 routes.get("/:id", MovieRouteHandler.getOne);
 routes.delete("/:id", MovieRouteHandler.delete);
+routes.patch("/:id", MovieRouteHandler.update);
 routes.use(errorHandler);

@@ -1,17 +1,21 @@
 import { Request, Response } from "express";
-import createMovie from "./createMovie";
-import listMovies from "./listMovies";
-import getOneMovie from "./getOneMovie";
-import deleteMovie from "./deleteMovie";
+import {
+  createMovie,
+  listMovies,
+  getOneMovie,
+  deleteMovie,
+  updateMovie,
+} from "./";
+
 export default class MovieRouteHandler {
   static async create(req: Request, res: Response) {
-    const movies = await createMovie(req.query);
-    res.success({ movies });
+    const movie = await createMovie(req.query);
+    res.success({ movie }, 201);
   }
 
   static async getAll(req: Request, res: Response) {
-    const movies = await listMovies(req.query);
-    res.success({ movies });
+    const { movies, total } = await listMovies(req.query);
+    res.success({ movies, total });
   }
 
   static async getOne(req: Request, res: Response) {
@@ -24,5 +28,10 @@ export default class MovieRouteHandler {
     const id = req.params.id;
     await deleteMovie(id);
     res.success({ message: "deleted" });
+  }
+
+  static async update(req: Request, res: Response) {
+    const movie = await updateMovie(req.params.id, req.body);
+    res.success({ movie });
   }
 }

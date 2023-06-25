@@ -1,15 +1,18 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express, { Express, Request, Response } from "express";
-import { moviesRoutes, songsRoutes } from "./routes";
+import { authRoutes, moviesRoutes, songsRoutes } from "./routes";
 import {
   responseHandler,
   errorHandler,
   routeNotFoundHandler,
 } from "./middlewares";
+import authHandler from "./middlewares/auth.middleware";
 const app: Express = express();
 app.use(express.json());
 app.use(responseHandler);
+app.use("/api/auth", authRoutes);
+app.use(authHandler);
 app.use("/api/movies", moviesRoutes);
 app.use("/api/songs", songsRoutes);
 //not for production use

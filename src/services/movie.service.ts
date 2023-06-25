@@ -3,7 +3,6 @@ import { Movie } from "@/models";
 
 export default class MovieService {
   static async create({ title, releaseYear, rating }): Promise<IMovie> {
-    console.log({ title });
     return await Movie.create({ title, releaseYear, rating });
   }
 

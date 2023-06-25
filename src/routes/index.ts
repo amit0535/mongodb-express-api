@@ -1,3 +1,4 @@
 import { routes as moviesRoutes } from "./movie.routes";
 import { routes as songsRoutes } from "./song.routes";
-export { moviesRoutes, songsRoutes };
+import { routes as authRoutes } from "./auth.routes";
+export { moviesRoutes, songsRoutes, authRoutes };

@@ -1,3 +1,4 @@
 import { IMovie } from "./Movie";
-
-export { IMovie };
+import { IUser } from "./User";
+import { IJWTToken } from "./JWTToken";
+export { IMovie, IUser, IJWTToken };

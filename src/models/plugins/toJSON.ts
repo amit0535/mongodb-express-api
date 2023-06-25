@@ -6,6 +6,7 @@ export default function toJSON(schema: Schema, options) {
     virtuals: true,
     transform: function (doc, ret) {
       delete ret._id;
+      delete ret.password;
     },
   });
 }

@@ -1,6 +1,6 @@
-# Not for small projects
+# Simple REST API CRUD
 
-You can follow MVC (Model View Controller) for small project but this is best suited for larger projects
+This is a sample project to created REST API using MongoDB, ExpressJS and TypeScript
 
 ## Install Docker and run it using
 

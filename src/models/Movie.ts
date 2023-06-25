@@ -1,7 +1,8 @@
 import { Schema, model } from "mongoose";
+import { IMovie } from "@/interfaces";
 
 const movieSchema = new Schema({
-  name: { type: String, required: true },
+  title: { type: String, required: true },
   duration: { type: Number, min: 1, max: 86400 }, //in seconds
   releaseYear: { type: Number, min: 1800, max: 2050 },
   rating: { type: Number, min: 1, max: 10 },
@@ -11,4 +12,4 @@ const movieSchema = new Schema({
   },
 });
 
-export default model("Movie", movieSchema);
+export default model<IMovie>("Movie", movieSchema);

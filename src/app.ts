@@ -6,8 +6,8 @@ import {
   responseHandler,
   errorHandler,
   routeNotFoundHandler,
+  authHandler,
 } from "./middlewares";
-import authHandler from "./middlewares/auth.middleware";
 const app: Express = express();
 app.use(express.json());
 app.use(responseHandler);

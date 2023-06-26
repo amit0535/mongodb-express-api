@@ -20,7 +20,7 @@ export default class AuthService {
 
   static getJWTToken(user: IUser): string {
     return jwt.sign({ userId: user.id }, JWT_SECRET, {
-      expiresIn: "2",
+      expiresIn: "1h",
     });
   }
 }
